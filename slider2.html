@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    *{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    }
+    .container{
+       height: 500px;
+        width: 700px;
+       border: 2px solid gray;
+       margin: 30px auto;
+       display: flex;
+      overflow: hidden;
+      
+    }
+    .card{
+        border-radius: 10px ;
+         flex-shrink: 0;
+         cursor: pointer;
+         padding: 10px;
+          height: 500px;
+        width: 700px;
+        transform: translateX(0);
+        transition: all 300ms linear;
+    }
+    .card img{
+        border-radius: 8px;
+       
+
+    }
+    .containerbutton{
+        text-align: center;
+       gap: 20px;
+    }
+    button{
+        height: 40px; 
+        width: 100px;
+        border-radius: 10px;
+        border: none;
+        background-color: blue;
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+    }
+    
+   </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxr-7yspU0NioDU98qKBsIqcDjibBTsJCwA&s" alt="" height="100%" width="100%"></div>
+<div class="card"><img src="https://t4.ftcdn.net/jpg/15/81/10/61/240_F_1581106138_RaQSlEE521dGW6a8V8Ii2tvFxyiZMfwT.jpg" alt="" height="100%" width="100%"></div>
+<div class="card"><img src="https://t3.ftcdn.net/jpg/01/54/14/86/360_F_154148685_yvijeC6L2SFpvqFJ5H1lunPg40FzCAf1.jpg" alt="" height="100%" width="100%"></div>
+<div class="card"><img src="https://www.shutterstock.com/shutterstock/photos/2455960931/display_1500/stock-photo-summer-fresh-fruit-salad-in-a-bowl-on-white-marble-background-top-view-with-copy-space-healthy-2455960931.jpg" alt="" height="100%" width="100%"></div>
+    </div>
+     <div class="containerbutton">
+        <button onclick="prestyle()">Pre</button>
+        <button onclick="nextstyle()">Next</button>
+    </div>
+
+
+   <script>
+    let cards= document.querySelectorAll(".card");
+    let btn=document.querySelectorAll("button");
+    let  count=0;
+    function nextstyle(){
+       count++;
+       if(count > cards.length-1){
+    //    if(count > cards.length-2){
+count=0;
+// btn[1].disabled=true;
+       }
+        for(let elem of cards ){
+elem.style.transform=`translateX(-${count*100}%)`
+        }
+    }
+     function prestyle(){
+       count--;
+    //    if(count > cards.length-1){
+       if(count < cards.length-1){
+// count=0;
+count=cards.length-1;
+       }
+        for(let elem of cards ){
+elem.style.transform=`translateX(-${count*100}%)`
+        }
+    }
+   </script>
+</body>
+</html>

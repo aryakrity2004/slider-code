@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+        }
+        body{
+            background-color: skyblue;
+
+        }
+        .container{
+            position: fixed;
+            width: 300px;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: lavenderblush;
+            transform: translateX(0);
+  transition: transform 1s ease;
+           
+        }
+       
+        #btn{
+            background: none;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed;
+            border: none;
+            margin: 15px;
+            color: gray;
+            cursor: pointer;
+        }
+        .btn{
+            background: blue;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            height: 40px;
+            width: 130px;
+            border-radius: 20px;
+            border: none;
+            margin: 15px;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <title>side-Bar</title>
+</head>
+<body>
+    <button class="btn">Add</button>
+    <div class="container">
+<button id="btn">X</button>
+    </div>
+</body>
+<script>
+    let btn=document.querySelector("#btn");
+    let button=document.querySelector(".btn");
+    let container=document.querySelector(".container");
+    btn.addEventListener(
+        "click",
+        function(){
+            container.style.display="none";
+        }
+    )
+    button.addEventListener(
+        "click",
+        function(){
+            container.style.display="block";
+        }
+    )
+</script>
+</html>

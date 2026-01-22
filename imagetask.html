@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 820px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 40px;
+        border: 2px solid gray;
+    }
+    .cardright{
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 700px;
+        padding: 10px;
+         /* border: 2px solid gray; */
+    }
+    .cardleft{
+         overflow-y: scroll;
+    }
+    .card{
+        height: 150px;
+        width: 150px;
+        /* border: 1px solid purple; */
+        /* margin: auto; */
+        cursor: pointer;
+         border: 1px solid gray;
+         padding: 10px;
+        
+    }
+    button{
+        height: 50px;
+        width: 170px;
+        background-color: orangered;
+        border: none;
+        font-size: 20px;
+        margin-right: 70px;
+        margin:50px auto;
+        border-radius: 20px;
+    }
+   </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<div class="cardleft">
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/w/i/f/-original-imahagy2cefszqgy.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/3/x/i/-original-imahagy2gcfupfhs.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/g/a/j/-original-imahagy2mhfq3hyb.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/k/j/v/-original-imahagy2sqnwdpdj.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/3/m/e/-original-imahagy2hefshhy8.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/9/q/a/-original-imahagy2hq6xuvnp.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/z/v/w/-original-imahagy23sgyvvrz.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+   <div class="card" onclick="imagechange(this)"><img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/h/2/c/-original-imahagy2mb2mfytv.jpeg?q=70&crop=false" alt="" height="100%" width="100%"></div>
+</div>
+
+
+<div class="cardright" >
+    <img id="bigImage"  src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/w/i/f/-original-imahagy2cefszqgy.jpeg?q=70&crop=false" alt="" height="100%" width="100%">
+    <button>Add To Cart</button>
+    <button>Buy Now</button>
+</div>
+    </div>
+    <script>
+       function imagechange(element){
+    let smallImg = element.querySelector("img");  
+    let bigImg = document.querySelector("#bigImage");
+    
+
+    bigImg.src = smallImg.src;
+}
+
+</script>
+</body>
+</html>
