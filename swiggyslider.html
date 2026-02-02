@@ -21,8 +21,8 @@
             gap: 10px;
             
         }
-        h2{
-             font-size: 20px;
+       .container h2{
+             font-size: 40px;
              padding: 0px 20px;
         }
         button{
@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        <h2><b>Order our best food options</b></h2>
+        <h2>Order our best food options</h2>
        <div class="btns">
          <button id="leftbtn">←</button>
         <button id="rightbtn">→</button>
@@ -114,22 +114,39 @@
     let righttbtn=document.querySelector("#rightbtn");
     let slider=document.querySelector(".firstcontainer");
     
+     function updateButtons() {
+            leftbtn.disabled = slider.scrollLeft <= 0;
+            rightbtn.disabled = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1;
+        }
+
+        // Initial check
+        updateButtons();
     
-rightbtn.addEventListener("click", function() {
+    
+rightbtn.addEventListener(
+    "click",
+     function() {
     slider.scrollBy({
-        left: 220*3
+        left: 220*3,
+        behavior: "smooth"
            // scroll right
        
     });
      rightbtn.disabled = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1;
 });
-leftbtn.addEventListener("click", 
+leftbtn.addEventListener(
+    "click", 
 function() {
     slider.scrollBy({
-        left: -220*3
+        left: -220*3,
+        behavior: "smooth"
            // scroll left
     });
      leftbtn.disabled = slider.scrollLeft <= 0;
+    
+
 });
+ // Update buttons after scroll (continuous tracking)
+     slider.addEventListener("scroll", updateButtons);
 </script>
 </html>

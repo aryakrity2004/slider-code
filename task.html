@@ -9,6 +9,8 @@
         }
         body{
             background-color: skyblue;
+            transition: transform 1s ease;
+            overflow: hidden;
 
         }
         .container{
@@ -19,9 +21,23 @@
             top: 0px;
             right: 0px;
             background-color: lavenderblush;
-            transform: translateX(0);
-  transition: transform 1s ease;
+            transform: translateX(100%);
+            transition: all 0.6s ease;
+  
            
+        }
+        .container.active{
+            transform: translateX(0);
+            overflow: hidden;
+        }
+        h1{
+            text-align: center;
+            color: blue;
+            position: absolute;
+            top: 30%;
+            left: 0px;
+            padding: 20px;
+            font-size: 50px;
         }
        
         #btn{
@@ -58,6 +74,7 @@
     <button class="btn">Add</button>
     <div class="container">
 <button id="btn">X</button>
+<h1>Hello Guy's</h1>
     </div>
 </body>
 <script>
@@ -67,13 +84,15 @@
     btn.addEventListener(
         "click",
         function(){
-            container.style.display="none";
+            
+          container.classList.remove("active");
         }
     )
     button.addEventListener(
         "click",
         function(){
-            container.style.display="block";
+            
+            container.classList.add("active");
         }
     )
 </script>
